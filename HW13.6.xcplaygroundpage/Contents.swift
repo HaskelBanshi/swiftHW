@@ -31,7 +31,6 @@ for day in daysInMonth {
     counter += 1
 }
 
-var monthNamesVar2 = monthNames
 var cortedgeDaysAndMonth: Array<(String, Int)> = []
 var timelyCortedge:(String, Int) = ("Month", 0)
 
