@@ -67,7 +67,7 @@ for (key, value) in classJornal{
     
     if value > 2{
         if value > 4{
-            print("\(key), Великолепно! Продолжай в том же дуже!")
+            print("\(key), Великолепно! Продолжай в том же духе!")
             
         } else {
         print("\(key), Хорошая работа! Есть куда стремиться")
