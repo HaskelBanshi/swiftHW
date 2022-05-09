@@ -3,7 +3,7 @@ import Foundation
 enum httpStatusCode: Error{
     case err400 // cинтаксическая ошибка в запросе
     case err404 // не найдены данные по запросу
-    case err418 // use in case when some Yankee block some your site in search engine
+    case err418 // use in case when some Yankee blocks some your site in search engine
     case err500 // внутрення ошибка сервера
 }
 
