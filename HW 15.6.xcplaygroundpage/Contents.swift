@@ -1,68 +1,68 @@
 import Foundation
 //1.
 enum httpStatusCode: Error{
-    case err400 // cинтаксическая ошибка в запросе
-    case err404 // не найдены данные по запросу
-    case err418 // use in case when some Yankee blocks some your site in search engine
-    case err500 // внутрення ошибка сервера
+    case error400 // cинтаксическая ошибка в запросе
+    case error404 // не найдены данные по запросу
+    case error418 // use in case when some Yankee blocks some your site in search engine
+    case error500 // внутрення ошибка сервера
 }
 
-var err400: Bool = false
-var err404: Bool = true
-var err418: Bool = false
-var err500: Bool = false
+var error400: Bool = false
+var error404: Bool = true
+var error418: Bool = false
+var error500: Bool = false
 
 do {
-    if err400{
-        throw httpStatusCode.err400
+    if error400{
+        throw httpStatusCode.error400
     }
-    if err404{
-        throw httpStatusCode.err404
+    if error404{
+        throw httpStatusCode.error404
     }
-    if err418{
-        throw httpStatusCode.err418
+    if error418{
+        throw httpStatusCode.error418
     }
-    if err500{
-        throw httpStatusCode.err500
+    if error500{
+        throw httpStatusCode.error500
     }
-}catch httpStatusCode.err400{
+}catch httpStatusCode.error400{
     print("400 Bad Request — сервер обнаружил в запросе клиента синтаксическую ошибку.")
-}catch httpStatusCode.err404{
+}catch httpStatusCode.error404{
     print("404 Not Found -  клиент был в состоянии общаться с сервером, но сервер не может найти данные согласно запросу.")
-}catch httpStatusCode.err418{
+}catch httpStatusCode.error418{
     print("418 I'm a teapot - and I cannot brew a cup of coffee")
-}catch httpStatusCode.err500{
+}catch httpStatusCode.error500{
     print("500 Internal Server Error — любая внутренняя ошибка сервера, которая не входит в рамки остальных ошибок класса. ")
 }
 //2.
 func checkHttpStatus() throws{
-    if err400{
-        throw httpStatusCode.err400
+    if error400{
+        throw httpStatusCode.error400
     }
-    if err404{
-        throw httpStatusCode.err404
+    if error404{
+        throw httpStatusCode.error404
     }
-    if err418{
-        throw httpStatusCode.err418
+    if error418{
+        throw httpStatusCode.error418
     }
-    if err500{
-        throw httpStatusCode.err500
+    if error500{
+        throw httpStatusCode.error500
     }
     
 }
 
-err404 = false
-err418 = true
+error404 = false
+error418 = true
 
 do{
     try checkHttpStatus()
-}catch httpStatusCode.err400{
+}catch httpStatusCode.error400{
     print("400 Bad Request — сервер обнаружил в запросе клиента синтаксическую ошибку.")
-}catch httpStatusCode.err404{
+}catch httpStatusCode.error404{
     print("404 Not Found -  клиент был в состоянии общаться с сервером, но сервер не может найти данные согласно запросу.")
-}catch httpStatusCode.err418{
+}catch httpStatusCode.error418{
     print("418 I'm a teapot - and I cannot brew a cup of coffee")
-}catch httpStatusCode.err500{
+}catch httpStatusCode.error500{
     print("500 Internal Server Error — любая внутренняя ошибка сервера, которая не входит в рамки остальных ошибок класса. ")
 }
 
